@@ -1,0 +1,19 @@
+import java.util.function.*;
+@FunctionalInterface
+interface MyInterface {
+    void display();
+}
+public class MainFI {
+    public static void main (String args[]) {
+        MyInterface m = () -> System.out.println("Hello!");
+        m.display();
+        Consumer<String> c = name -> System.out.println(name);
+        c.accept("Abc");
+        Predicate<Integer> p = n -> n > 10;
+        System.out.println(p.test(15));
+        Function<Integer, Integer> f = n -> n * n;
+        System.out.println(f.apply(5));
+        Supplier<String> s = () -> "Hello world!";
+        System.out.println(s.get());
+    }
+}
