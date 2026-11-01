@@ -1,0 +1,15 @@
+public class Err2 {
+    public static void main (String args[]) {
+        try {
+            int[] a = {37, 38, 794};
+            System.out.println(a[50]);
+        }
+        catch (ArrayIndexOutOfBoundsException e)
+        {
+            System.out.println("Array Index Error");
+        }
+        finally {
+            System.out.println("Block done");
+        }
+    }
+}
