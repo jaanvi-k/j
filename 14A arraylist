@@ -1,0 +1,31 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+public class ArrayListExample {
+    public static void main (String args[]) {
+        Scanner sc = new Scanner(System.in);
+        ArrayList<String> students = new ArrayList<>();
+        students.add("Rahul");
+        students.add("Priya");
+        students.add("Amit");
+        students.add("Sneha");
+        System.out.println("Student names: ");
+        for(String name: students) {
+            System.out.println(name);
+        }
+        students.add(2, "Neha");
+        System.out.println("After adding Neha: ");
+        System.out.println(students);
+        students.remove("Amit");
+        System.out.println("After removing Amit: ");
+        System.out.println(students);
+        System.out.println("Enter name to search: ");
+        String name = sc.nextLine();
+        if (students.contains(name)) {
+            System.out.println(name + " is present in the list");
+        } else {
+            System.out.println(name + " is not present in the list");
+        }
+        System.out.println("Total number of students: " + students.size());
+        sc.close();
+    }
+}
