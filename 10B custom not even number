@@ -1,0 +1,22 @@
+import java.util.*;
+import java.io.*;
+class myException extends Exception {
+    myException(String s) {
+        super(s);
+    }
+}
+class even {
+    public static void main (String args[]) throws IOException {
+        Scanner sc = new Scanner(System.in);
+        try {
+            System.out.println("Enter a number: ");
+            int num = sc.nextInt();
+            if (num % 2 != 0) {
+                throw new myException("Not an even no.");
+            }
+        }
+        catch (myException e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+    }
+}
